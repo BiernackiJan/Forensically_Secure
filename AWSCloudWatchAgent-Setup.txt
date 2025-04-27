@@ -36,7 +36,7 @@
 |                                        Start Config Wizard                                              |
 -----------------------------------------------------------------------------------------------------------
 |                                                                                                         |
-|  sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard			                  |
+|  sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard                        |
 |                                                                                                         |
 -----------------------------------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@
 |                                       Edit Config File                                                  |
 -----------------------------------------------------------------------------------------------------------
 |                                                                                                         |
-|  sudo nano /opt/aws/amazon-cloudwatch-agent/etc/config.json						                                  |
+|  sudo nano /opt/aws/amazon-cloudwatch-agent/etc/config.json                                             |
 |                                                                                                         |
 -----------------------------------------------------------------------------------------------------------
 
@@ -95,7 +95,7 @@
 |                                       Test Logs Manually                                                |
 -----------------------------------------------------------------------------------------------------------
 |                                                                                                         |
-|  echo "$(date) CloudWatch agent test line" | sudo tee -a /var/log/openvpnas.log			                    |
+|  echo "$(date) CloudWatch agent test line" | sudo tee -a /var/log/openvpnas.log                         |
 |                                                                                                         |
 -----------------------------------------------------------------------------------------------------------
 
@@ -155,7 +155,7 @@
 |                                            Create the Config File                                       |
 -----------------------------------------------------------------------------------------------------------
 |                                                                                                         |
-|  notepad C:\Program Files\Amazon\AmazonCloudWatchAgent\config.json					                            |
+|  notepad C:\Program Files\Amazon\AmazonCloudWatchAgent\config.json                                      |
 |                                                                                                         |
 -----------------------------------------------------------------------------------------------------------
 
@@ -203,7 +203,7 @@
 |                                 Enable Service to autostart on boot                                     |
 -----------------------------------------------------------------------------------------------------------
 |                                                                                                         |
-|  Set-Service -Name AmazonCloudWatchAgent -StartupType Automatic					                                |
+|  Set-Service -Name AmazonCloudWatchAgent -StartupType Automatic                                         |
 |                                                                                                         |
 -----------------------------------------------------------------------------------------------------------
 

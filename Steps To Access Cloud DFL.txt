@@ -1,5 +1,5 @@
 ##################################################################
-|		 			How to connect to the Cloud DFL			 	 |
+|					How to connect to the Cloud DFL				 |
 ##################################################################
 
 If all setup steps have been followed and the cloud DFL has been 
