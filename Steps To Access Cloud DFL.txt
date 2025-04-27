@@ -1,0 +1,82 @@
+##################################################################
+|		 			How to connect to the Cloud DFL			 	 |
+##################################################################
+
+If all setup steps have been followed and the cloud DFL has been 
+setup as in the documentation this connection guide should cause no problems
+
+
+------------------------ Step 1 ------------------------
+
+ Install the OpenVPN Connect Client ( https://openvpn.net/client/ )
+
+--------------------------------------------------------
+
+
+
+
+------------------------ Step 2 ------------------------
+
+ Download the aws CLI and configure it: ( https://awscli.amazonaws.com/AWSCLIV2.msi )
+
+	AWS Access Key ID: <Your-Access-KeyID>
+	Secret Access Key ID: <Your-Secret-Access-KeyID>
+	Region: <Region-Of-Cloud-DFL>
+
+--------------------------------------------------------
+
+
+
+
+------------------------ Step 3 ------------------------
+
+ Create a new connection in the OpenVPN Client using:
+
+	IP: <OpenVPN-Access-Server-IP>
+	Username: <Created-Username>
+	Password: <Created-Password>
+
+ Connect to the OpenVPN Access Server
+
+
+      --------------- Upload files ---------------
+
+  aws s3 cp ./<FILE_TO_UPLOAD> s3://<Bucket-Name>/<FILE_TO_UPLOAD>
+
+--------------------------------------------------------
+
+
+
+
+------------------------ Step 4 ------------------------
+
+  RDP into the Bastion Host using:
+
+	IP: <Instance-Private-IP>
+	Username: <AWS-Provided-Instance-Username>
+	Password: <AWS-Generated-Password>
+
+--------------------------------------------------------
+
+
+
+
+------------------------ Step 5 ------------------------
+
+  RDP into the Cloud Lab Instance from the bastion host using:
+	
+	IP: <Instance-Private-IP>
+	Username: <AWS-Provided-Instance-Username>
+	Password: <AWS-Generated-Password>
+
+
+
+ ----- You can download and list files from the s3 bucket here using these commands -----
+
+
+List Files in Bucket:  aws s3 ls s3://<Bucket-Name>/
+	
+
+Download Using: aws s3 cp s3://<Bucket-Name>/<FILE_NAME> .
+
+--------------------------------------------------------

@@ -1,0 +1,188 @@
+#######################################################
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+################## Roles in AWS IAM ###################
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#######################################################
+
+
+
+#######################################################
+###################### VPN Role #######################
+#######################################################
+
+-------------------------------------------------------
+|                    Upload Policy		              |
+-------------------------------------------------------
+
+Allows uploads to defined bucket for user connected
+to VPN
+				      
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<YOUR BUCKET NAME>",
+                "arn:aws:s3:::<YOUR BUCKET NAME>/*"
+            ]
+        }
+    ]
+}				      
+				      
+
+
+-------------------------------------------------------
+|          CloudWatch Log Forwarding Policy	          |
+-------------------------------------------------------
+
+Allows for the VPN access server to forward logs to a 
+centralized logging CloudWatch System
+
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "logs:DescribeLogStreams",
+                "logs:CreateLogGroup"
+            ],
+            "Resource": "arn:aws:logs:*:<YOUR ACCOUNT NUMBER>:log-group:*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:<YOUR ACCOUNT NUMBER>:log-group:*:log-stream:*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": "logs:DescribeLogGroups",
+            "Resource": "*"
+        }
+    ]
+}
+
+
+#######################################################
+-------------------------------------------------------
+#######################################################
+
+
+
+
+
+
+
+
+#######################################################
+################## Bastion Host Role ##################
+#######################################################
+
+-------------------------------------------------------
+|           CloudWatch Log Forwarding Policy	      |
+-------------------------------------------------------
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:DescribeLogGroups",
+                "logs:DescribeLogStreams",
+                "logs:PutLogEvents",
+                "logs:CreateLogGroup"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+
+#######################################################
+-------------------------------------------------------
+#######################################################
+
+
+
+
+
+
+
+
+#######################################################
+################## DFL Instance Role ##################
+#######################################################
+
+-------------------------------------------------------
+|                   Download Policy		              |
+-------------------------------------------------------
+
+Allows for downloads from specified S3 bucket to DFL 
+Instance through the setup endpoint
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<YOUR BUCKET NAME>",
+                "arn:aws:s3:::<YOUR BUCKET NAME>/*"
+            ]
+        }
+    ]
+}
+
+
+
+
+-------------------------------------------------------
+|           CloudWatch Log Forwarding Policy          |
+-------------------------------------------------------
+Allows for DFL Instance to forward system logs for 
+centralized log monitoring in CloudWatch through endpoint
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:DescribeLogGroups",
+                "logs:DescribeLogStreams",
+                "logs:CreateLogGroup",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+
+#######################################################
+-------------------------------------------------------
+#######################################################
