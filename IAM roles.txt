@@ -11,7 +11,7 @@
 #######################################################
 
 -------------------------------------------------------
-|                    Upload Policy		              |
+|                    Upload Policy                    |
 -------------------------------------------------------
 
 Allows uploads to defined bucket for user connected
@@ -39,7 +39,7 @@ to VPN
 
 
 -------------------------------------------------------
-|          CloudWatch Log Forwarding Policy	          |
+|          CloudWatch Log Forwarding Policy           |
 -------------------------------------------------------
 
 Allows for the VPN access server to forward logs to a 
@@ -93,7 +93,7 @@ centralized logging CloudWatch System
 #######################################################
 
 -------------------------------------------------------
-|           CloudWatch Log Forwarding Policy	      |
+|           CloudWatch Log Forwarding Policy          |
 -------------------------------------------------------
 
 {
@@ -131,7 +131,7 @@ centralized logging CloudWatch System
 #######################################################
 
 -------------------------------------------------------
-|                   Download Policy		              |
+|                   Download Policy                   |
 -------------------------------------------------------
 
 Allows for downloads from specified S3 bucket to DFL 
