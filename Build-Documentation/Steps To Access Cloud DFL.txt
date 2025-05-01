@@ -41,7 +41,7 @@ setup as in the documentation this connection guide should cause no problems
 
       --------------- Upload files ---------------
 
-  aws s3 cp ./<FILE_TO_UPLOAD> s3://<Bucket-Name>/<FILE_TO_UPLOAD>
+  aws s3 cp ./<FILE_TO_UPLOAD> s3://<YOUR-BUCKET-NAME>/<FILE_TO_UPLOAD>
 
 --------------------------------------------------------
 
@@ -74,9 +74,9 @@ setup as in the documentation this connection guide should cause no problems
  ----- You can download and list files from the s3 bucket here using these commands -----
 
 
-List Files in Bucket:  aws s3 ls s3://<Bucket-Name>/
+List Files in Bucket:  aws s3 ls s3://<YOUR-BUCKET-NAME>/
 	
 
-Download Using: aws s3 cp s3://<Bucket-Name>/<FILE_NAME> .
+Download Using: aws s3 cp s3://<YOUR-BUCKET-NAME>/<FILE_NAME> .
 
 --------------------------------------------------------
